@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lone wolf 🐺</title>
+</head>
+<!-- 1. Search box -->
+<input type="search" id="searchInput" placeholder="Search here...">
+<button onclick="searchPage()" style ="background:salmon;">🔍</button>
+<button onclick="clearHighlights()" style="background: salmon;">Clear</button>
+    <br>
+<body>
+    <br>
+     <!-- 2. Your page content -->
+<div id="content">
+    <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:coral;">
+        <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:#d9df25c6;">
+    <h2>
+        ABOUT THE BOOK 
+    </h2>
+   </div>
+   <br>
+   <p id="font">
+       This book was written to tell one special person to the author the life obstacle he faced,but despite the challenges that he will still be there for her, even if in the story the Lone later end up staying alone but his own case will be different if and only if she feels the same way for him. And like the Lone did in the story not to force anyone to accept him so is what this writer wants to do, he won't force you to be with him but will let you make decisions of your own. So you can be happy because your happiness is all he wants.
+   </p>
+   <br>
+   <img src="❤️.jpg" width="300px" height="300px"alt="the one person">
+   <br>
+   <p id="font">
+       Also, he may feel left out in the world but he knows one thing is for sure, that no matter the place or environment he is in he will definitely lead and that is for sure because GOD HAS WRITTEN IT and so it will remain.
+   </p>
+</div>
+<br>
+<div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background: #0a0c29; height:19000">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+     <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:#d9df25c6;">
+    <h2>
+        ABOUT THE AUTHOR 
+    </h2>
+   </div>
+    <br>
+     <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:#d9df25c6;height:1090px">
+        <img src="me.png"
+         width="256px"   height="300px" style="background-color:#d9df25c6; "alt="the person">
+  <p>
+     <h2>
+         DAVID O.I EMEKA
+     </h2>
+  </p>
+    <P id="font">
+        He is a boy from an average family. With big dreams but had little resources to carry out his projects despite that he never gave he kept strong and continued his journey of life. He passed through his basic education foundational training in DE-PAUL CATHOLIC NURSERY AND PRIMARY SCHOOL, where he did from crèche to primary five. Then pass through a secondary school known as COMMUNITY JUNIOR GRAMMAR SCHOOL for the junior and MILLENNIUM SENIOR SECONDARY SCHOOL for the senior,where he wrote is WEST AFRICA SENIOR SECONDARY CERTIFICATE EXAMINATION (WASSCE).
+    </P>
+        <p id="font">
+            He got admission into YABA COLLEGE OF TECHNOLOGY(YABATECH) studying COMPUTER ENGINEERING for two years completed his OND there,then continued his education in UNIVERSITY OF LAGOS STATE(UNILAG) studying the same course for the rest of his semester and completed his Bsc. there then further his education outside the country.
+        </p>
+        <p id="font">
+            He joined the boys scouts association when he was in JSS3
+        </p>
+    </div>
+    <br>
+    <br>
+    <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background: coral; height:300px">
+         <div id="button4">
+        <i><h2>for more information 
+        <button><a href="https://www.snapchat.com/add/officepin?share_id=bg5m5jgmo3o&locale=en-GB"style="background: silver;">click here</a></button>
+        </div>
+        </h2></i>
+        <h5><em>contact me below</em></h5>
+        <br>
+        <details>
+            <summary>see contact details here</summary>
+            <ul>
+            <p>
+            <a href="https://wa.me/2348036935843? target="_blank">Chat me on WhatsApp</a>
+            </p>
+            <p>
+                <a href="mailto:davidolise286@gmail.com?subject=Help needed">Email me</a>
+            </p>
+            <p>
+                <a href="tel:+2349133375057">call me</a>
+            </p>
+            </ul>
+        </details>
+    </div>
+    </div>
+    </div>
+</body>
+<br>
+<!-- 3. JavaScript program -->
+<script>
+function searchPage() {
+  clearHighlights (); // remove search input first
+  
+  const term = document.getElementById('searchInput').value.trim();
+  if (!term) return;
+  
+  const content = document.getElementById('content');
+  const regex = new RegExp(`(${term})`, 'gi'); // 'g' = all matches, 'i' = case insensitive
+  
+  content.innerHTML = content.innerHTML.replace(regex, '<mark>$1</mark>');
+  
+  // Scroll to all match
+  const allMatch = content.querySelector('mark');
+  if (allMatch) allMatch.scrollIntoView({behavior: 'smooth', block: 'center'});
+}
+
+function clearHighlights () {
+  const content = document.getElementById('content');
+  content.innerHTML = content.innerHTML.replace(/<mark>|<\/mark>/g, '');
+}
+
+// Hit Enter to search
+document.getElementById('searchInput').addEventListener('keyup', e => {
+  if (e.key === 'Enter') searchPage();
+});
+</script>
+<style>
+.root{
+    --primary:#ff2a15
+}
+body{
+height:10vh;
+overflow:10%;
+background:linear-gradient(
+25deg,
+#d9df25c6 50%,
+#df0900c6 50%);
+transition:0s;
+}
+#button{
+position: absolute;
+left:8%;
+down:95%;
+padding:0px 0px;
+}
+#button2{
+position: absolute;
+right:8%;
+down:95%;
+padding:0px 0px;
+}
+#button3{
+position: absolute;
+left:39%;
+down:10%;
+padding:0px 0px;
+}
+#button4{
+width:min(0%  10px);
+padding:5px 5px;
+font-size:1rem;
+border-radius:4px;
+transition:2s;
+cursor:pointer; 
+}
+#font{
+    font-generic: cursive;
+    font-family: Brush Script MT;
+    word-spacing:5px;
+    color:#2c2e26;
+    font-weight: light;
+    font-size:14px;
+    font-style: oblique;
+}
+</style>
+<br>
+<div id="button">
+<button type="Go to next page" style="background:coral">
+       <a href="story4.html">
+           Previous page
+       </a>
+   </button>
+    </div>
+    <div id="button2">
+<button type="Go to next page" style="background:coral">
+       <a href="index.html">
+           Go to first page 
+       </a>
+   </button>
+   </div>
+     <div id="button3">
+<button type="Go to next page" style="background:coral">
+       <a href="story5.html">
+           Go to top
+       </a>
+   </button>
+    </div>
+   <br>
+   <p>
+       .
+   </p>
+</html>
