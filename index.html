@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lone wolf 🐺</title>
+    
+</head>
+ <!-- 1. Search box -->
+<input type="search" id="searchInput" placeholder="Search here...">
+<button onclick="searchPage()" style ="background:salmon;">🔍</button>
+<button onclick="clearHighlights()" style="background: salmon;">Clear</button>
+    <br>
+    <!-- 2. Your page content -->
+<div id="content">
+    <br>
+    <div style="border:1px solid #ccc; padding:20px; border-radius:8px; background:coral;">
+    <h1>
+        <span style="color:#f4ffd5">
+        LONE WOLF 
+    </span>
+    </h1>
+    <P>
+        <h2>
+            A story of life but seems fictional.
+        </h2>
+    </P>
+    </div>
+<br>
+
+ <div style="border:1px solid #ccc; padding:20px; border-radius:8px; background:coral;">
+     <img src="LW01b.jpg" width="300px 250px"alt="">
+ </div>
+<br>
+<body>
+    
+    <div style="border:1px solid #ccc;padding:20px; border-radius:8px; background:coral;">
+        <span style="color:gold">
+  <h2>The story of the Lone Wolf</h2>
+  </span>
+  <p id="font">I know many of you will be wondering, what does the story of a <strong>lone wolf</strong> has to do with human but never forget that this <em>aminals</em> has emotions and feel things going on around them.</p>
+  <p id="font">
+      But let not waste much time on this and let move to the reason for being here</p>
+</div>
+<br>
+<div style="border:1px solid #ccc; padding:20px; border-radius:8px; background:coral;">
+    <h3>
+        CONTENT 
+    </h3>
+    <ul id="font">
+        <li>
+            Chapter one
+            <em>(loneliness)</em>
+        </li>
+        <li>
+            Chapter two
+            <em>(what happened)</em>
+        </li>
+        <li>
+            Chapter three 
+            <em>(The pains)</em>
+        </li>
+        <li>
+            Chapter four 
+            <em>(Don't call it a come back)</em>
+        </li>
+        <li>
+            Chapter five
+            <em>(The master mind)</em>
+        </li>
+    </ul>
+</div>
+    <br>
+    <div id="button">
+   <button type="Go to next page" style="background:coral">
+       <a href="http://localhost:8080/story2.html">
+           Next page
+       </a>
+   </button>
+   </div>
+   <div id="button2">
+<button type="Go to next page" style="background:coral">
+       <a href="story5.html">
+           Go to last page 
+       </a>
+   </button>
+    </div>
+   <br>
+   <p>
+       .
+   </p>
+</body>
+
+<!-- 3. JavaScript program -->
+<script>
+function searchPage() {
+  clearHighlights (); // remove search input first
+  
+  const term = document.getElementById('searchInput').value.trim();
+  if (!term) return;
+  
+  const content = document.getElementById('content');
+  const regex = new RegExp(`(${term})`, 'gi'); // 'g' = all matches, 'i' = case insensitive
+  
+  content.innerHTML = content.innerHTML.replace(regex, '<mark>$1</mark>');
+      
+  // Scroll to all match            
+  const allMatch = content.querySelector('mark');
+  if (allMatch) allMatch.scrollIntoView({behavior: 'smooth', block: 'center'});
+}
+
+function clearHighlights () {
+  const content = document.getElementById('content');
+  content.innerHTML = content.innerHTML.replace(/<mark>|<\/mark>/g, '');
+}
+
+// Hit Enter to search
+document.getElementById('searchInput').addEventListener('keyup', e => {
+  if (e.key === 'Enter') searchPage();
+});
+ alert ('🌘Get ready to experience greatness 🌒')
+</script>
+
+<style>
+.root{
+    --primary:#ff2a15
+}
+body{
+height:10vh;
+overflow:2;
+background:linear-gradient(
+25deg,
+#d9df25c6 50%,
+#df0900c6 50%);
+transition:0s;
+}
+#button{
+position: absolute;
+right:8%;
+down:90%;
+padding:0px 0px;
+}
+#button2{
+position: absolute;
+left:8%;
+down:90%;
+padding:0px 0px;
+}
+#font{
+    font-generic: cursive;
+    font-family: Brush Script MT;
+    word-spacing:5px;
+    color:#2c2e26;
+    font-weight: light;
+    font-size:14px;
+    font-style: oblique;
+}
+</style>
+</html>
+
+
+
