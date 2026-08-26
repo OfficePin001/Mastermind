@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lone wolf 🐺</title>
+</head>
+<!-- 1. Search box -->
+<input type="search" id="searchInput" placeholder="Search here...">
+<button onclick="searchPage()" style ="background:salmon;">🔍</button>
+<button onclick="clearHighlights()" style="background: salmon;">Clear</button>
+    <br>
+<body>
+    <br>
+     <!-- 2. Your page content -->
+<div id="content">
+    <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:coral;">
+        <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:#d9df25c6;">
+    <h2>Chapter Five</h2>
+    <h5>The master mind</h5>
+   </div>
+   <br>
+   <p id="font">
+       Now the lone as won over 90% of the wild leading them all by himself self, despite the fact that he controls over 90% of the wild he is still alone because he lost his family during the last visit,they said he was never useful to them so they would not bow to him that they rather die fighting than surrender all they have to a stray wolf who doesn't have a pack he belongs to. But one thing came to his mind when he parents made that statement he said "I may not have a wolf pack but this pack of mine is way stronger than ten times their wolf pack"
+   </p>
+   <br>
+   <img src="LW01d.jpg" width="300px" height="250px"alt="lonewolf in bush">
+   <br>
+   <p id="font">
+       The lone wolf became the most popular, important, respected,feared and honoured animal in the entire wild he was called the
+       <span style="color:#2b43ff; text-decoration-line:underline; text-decoration-style:double;">
+        "MASTER MIND"
+        </span>
+   </p>
+</div>
+</body>
+<!-- 3. JavaScript program -->
+<script>
+function searchPage() {
+  clearHighlights (); // remove search input first
+  
+  const term = document.getElementById('searchInput').value.trim();
+  if (!term) return;
+  
+  const content = document.getElementById('content');
+  const regex = new RegExp(`(${term})`, 'gi'); // 'g' = all matches, 'i' = case insensitive
+  
+  content.innerHTML = content.innerHTML.replace(regex, '<mark>$1</mark>');
+  
+  // Scroll to all match
+  const allMatch = content.querySelector('mark');
+  if (allMatch) allMatch.scrollIntoView({behavior: 'smooth', block: 'center'});
+}
+
+function clearHighlights () {
+  const content = document.getElementById('content');
+  content.innerHTML = content.innerHTML.replace(/<mark>|<\/mark>/g, '');
+}
+
+// Hit Enter to search
+document.getElementById('searchInput').addEventListener('keyup', e => {
+  if (e.key === 'Enter') searchPage();
+});
+</script>
+<style>
+.root{
+    --primary:#ff2a15
+}
+body{
+height:10vh;
+overflow:2;
+background:linear-gradient(
+25deg,
+#d9df25c6 50%,
+#df0900c6 50%);
+transition:0s;
+}
+#button{
+position: absolute;
+left:8%;
+down:90%;
+padding:0px 0px;
+}
+#button2{
+position: absolute;
+right:8%;
+down:90%;
+padding:0px 0px;
+}
+#font{
+    font-generic: cursive;
+    font-family: Brush Script MT;
+    word-spacing:5px;
+    color:#2c2e26;
+    font-weight: light;
+    font-size:14px;
+    font-style: oblique;
+}
+</style>
+<br>
+<div id="button">
+<button type="Go to next page" style="background:coral">
+       <a href="story3.html">
+           Previous page
+       </a>
+   </button>
+    </div>
+    <div id="button2">
+<button type="Go to next page" style="background:coral">
+       <a href="story5.html">
+           Next page 
+       </a>
+   </button>
+    </div>
+   <br>
+   <p>
+       .
+   </p>
+</html>
