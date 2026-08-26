@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lone wolf 🐺</title>
+</head>
+ <!-- 1. Search box -->
+<input type="search" id="searchInput" placeholder="Search here...">
+<button onclick="searchPage()" style ="background:salmon;">🔍</button>
+<button onclick="clearHighlights()" style="background: salmon;">Clear</button>
+
+    <br>
+<body>
+    <br>
+    <!-- 2. Your page content -->
+<div id="content">
+    <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:coral;">
+        <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:#d9df25c6;">
+       <h2>Chapter Three</h2>
+       <h5>The pains</h5>
+    </div>
+    <p id="font">
+        Through the burning heat of the sun and the freezing cold of the winter the Lone was still standing strong in other to achieve his goals. When the storm will come in hard this lone never gave up he kept focused on the future that everything will be alright, he has to starve when he found nothing to hunt,he was also chased by other animals that are stronger than him fought with most and ran for his life.
+    </p>
+    <img src="LW01f.jpg" width="300px"alt="lonewolf in bush">
+    <p id="font">
+        He went deep in the wild and discovered a lot that he would not have discovered as member of a pack he has to swim through deadly waters,stump through muddy soil even has to pass through Sharp thorns but nevertheless did he give up. During this process he was actually building himself and his relation with other factors like the animals and plants in the wild,he knows what they would like and what the do not like.
+    </p>
+    <img src="LW01e.jpg" width="300px" height="300px"alt="lonewolf in bush">
+    </div>
+    </body>
+    <br>
+    <body>
+    <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:coral;">
+     <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:#d9df25c6;">
+         <h2>Chapter Four</h2>
+         <h5>Don't call it a come back</h5>
+         </div>
+    <p id="font">
+        After going through all those suffering, torment and training he finally achieved his goal he found a space, a very beautiful one where he settled down and called his own land he led all the animals that lived in it and became the head of that land. Ruled there for years and even won battles over his rivals, claim there land and became the head.
+    </p>
+    <img src="LW01g.jpg" width="300px" height="250px"alt="lonewolf in bush">
+    <p id="font">
+        Now, he is to fight with the people in which his real families lived, he had no choice, they dumped him because they found no ability in him. So by the time he got to the land of his family they all thought he has come back to help them cause they were short of soldiers, but they were shocked when they saw the warriors of the people who slayed their soldiers with the Lone and they were frightened and wanted to help him but those were his guards so they reacted towards his family when they drawed closer to him. Then he stood them down and told his family they are my warriors so I will advise you to step down useless he takes them down. And left saying "Don't call this a come back "
+    </p>
+    <img src="LW01h.jpg" width="300px" height="250px"alt="lonewolf in bush">
+    </div>
+    </body>
+    
+    
+<br>
+<!-- 3. JavaScript program -->
+<script>
+function searchPage() {
+  clearHighlights (); // remove search input first
+  
+  const term = document.getElementById('searchInput').value.trim();
+  if (!term) return;
+  
+  const content = document.getElementById('content');
+  const regex = new RegExp(`(${term})`, 'gi'); // 'g' = all matches, 'i' = case insensitive
+  
+  content.innerHTML = content.innerHTML.replace(regex, '<mark>$1</mark>');
+  
+  // Scroll to all match
+  const allMatch = content.querySelector('mark');
+  if (allMatch) allMatch.scrollIntoView({behavior: 'smooth', block: 'center'});
+}
+
+function clearHighlights () {
+  const content = document.getElementById('content');
+  content.innerHTML = content.innerHTML.replace(/<mark>|<\/mark>/g, '');
+}
+
+// Hit Enter to search
+document.getElementById('searchInput').addEventListener('keyup', e => {
+  if (e.key === 'Enter') searchPage();
+});
+</script>
+<style>
+.root{
+    --primary:#ff2a15
+}
+body{
+height:10vh;
+overflow:0;
+background:linear-gradient(
+25deg,
+#d9df25c6 50%,
+#df0900c6 50%);
+transition:0s;
+}
+#button{
+position: absolute;
+left:8%;
+down:90%;
+padding:0px 0px;
+}
+#button2{
+position: absolute;
+right:8%;
+down:90%;
+padding:0px 0px;
+}
+#button3{
+position: absolute;
+right:38%;
+down:10%;
+padding:0px 0px;
+}
+#font{
+    font-generic: cursive;
+    font-family: Brush Script MT;
+    word-spacing:5px;
+    color:#2c2e26;
+    font-weight: light;
+    font-size:14px;
+    font-style: oblique;
+}
+</style>
+<br>
+<div id="button">
+<button type="Go to next page" style="background:coral">
+       <a href="story2.html">
+           Previous page
+       </a>
+   </button>
+    </div>
+    <div id="button2">
+    <button type="Go to next page" style="background:coral">
+       <a href="story4.html">
+          Next page 
+       </a>
+   </button>
+   </div>
+   <div id="button3">
+<button type="Go to next page" style="background:coral">
+       <a href="story3.html">
+           Go to top
+       </a>
+   </button>
+    </div>
+   <br>
+   <p>
+       .
+   </p>
+</html>
