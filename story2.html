@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LONE WOLF 🐺</title>
+   <!-- 1. Search box -->
+<input type="search" id="searchInput" placeholder="Search here...">
+<button onclick="searchPage()" style ="background:salmon;">🔍</button>
+<button onclick="clearHighlights()" style="background: salmon;">Clear</button>
+    <br>
+    </head>
+    <body>
+        
+        <!-- 2. Your page content -->
+<div id="content">
+<br>
+<div id="section2">
+   <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:coral;">
+       <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:#d9df25c6;">
+       <h2>Chapter one</h2>
+       <h5>Loneliness</h5>
+       </div>
+       <p id="font">
+           In the world 🌎 full of wonderful creatures, from the lion 🦁 to the tiger 🐯 to the elephant 🐘 to the ones which dwells in the ocean 🌊 like the wild shark 🦈,the octopus 🐙 the fishes 🐠🐟 the jellyfish 🪼 and the flying creatures like the eagle 🦅 the raven 🐦‍⬛ and others. This creature has it unique characteristics, they move in pack but one is always left out and that one is the one we call the <em>LONE WOLF</em>. 
+       </p>
+   <img src="LW01.jpg" width="200px     100px"alt="lonewolf">
+</div>
+<br>
+<div id="section 3">
+    <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:coral;">
+        <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:#d9df25c6;">
+        <h2>Chapter two</h2>
+        <h5>what happened</h5>
+        </div>
+        <p id="font">
+             It all started when a wolf has lower ability or is lost but nevertheless is a member of the pack meant to be left out because they are all of the same species and they are like one family so leaving one person behind is like building up a rival between two parties.
+        </p>
+        <p id="font">
+            The wolf left out also known as the <em><span style="color:green">lone wolf</span> </em>might find it difficult to adapt to the new changes in it's environment but if it definitely gets used to the environment it will be more exposed than others in the pack because he will learn different ways of living and he will be able to know how all animals behave and how to relate with them.
+        </p>
+        <img src="LW01a.jpg" width="200px 100px"alt="lonewolf in bush">
+</div>
+</body>
+<header>
+
+<!-- 3. JavaScript program -->
+<script>
+function searchPage() {
+  clearHighlights (); // remove search input first
+  
+  const term = document.getElementById('searchInput').value.trim();
+  if (!term) return;
+  
+  const content = document.getElementById('content');
+  const regex = new RegExp(`(${term})`, 'gi'); // 'g' = all matches, 'i' = case insensitive
+  
+  content.innerHTML = content.innerHTML.replace(regex, '<mark>$1</mark>');
+  
+  // Scroll to all match
+  const allMatch = content.querySelector('mark');
+  if (allMatch) allMatch.scrollIntoView({behavior: 'smooth', block: 'center'});
+}
+
+function clearHighlights () {
+  const content = document.getElementById('content');
+  content.innerHTML = content.innerHTML.replace(/<mark>|<\/mark>/g, '');
+}
+
+// Hit Enter to search
+document.getElementById('searchInput').addEventListener('keyup', e => {
+  if (e.key === 'Enter') searchPage();
+});
+</script>
+</header>
+<style>
+.root{
+    --primary:#ff2a15
+}
+body{
+height:10vh;
+overflow:10;
+background:linear-gradient(
+25deg,
+#d9df25c6 50%,
+#df0900c6 50%);
+transition:0s;
+}
+#button{
+position: absolute;
+left:8%;
+down:90%;
+padding:0px 0px;
+}
+#button2{
+position: absolute;
+right:8%;
+down:90%;
+padding:0px 0px;
+}
+#font{
+    font-generic: cursive;
+    font-family: Brush Script MT;
+    word-spacing:5px;
+    color:#2c2e26;
+    font-weight: light;
+    font-size:14px;
+    font-style: oblique;
+}
+</style>
+<br>
+<div id="button">
+<button type="Go to next page" style="background:coral">
+       <a href="http://localhost:8080/story.html">
+           Previous page
+       </a>
+   </button>
+    </div>
+    <div id="button2">
+    <button type="Go to next page" style="background:coral">
+       <a href="http://localhost:8080/story3.html">
+          Next page 
+       </a>
+   </button>
+   </div>
+   <br>
+   <p>
+       .
+   </p>
+</html>
