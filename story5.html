@@ -1,224 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lone wolf 🐺</title>
-</head>
-<!-- 1. Search box -->
-<input type="search" id="searchInput" placeholder="Search here...">
-<button onclick="searchPage()" style ="background:salmon;">🔍</button>
-<button onclick="clearHighlights()" style="background: salmon;">Clear</button>
-    <br>
-<body>
-    <br>
-     <!-- 2. Your page content -->
-<div id="content">
-    <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:coral;">
-        <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:#d9df25c6;">
-    <h2>
-        ABOUT THE BOOK 
-    </h2>
-   </div>
-   <br>
-   <p id="font">
-       This book was written to tell those who feel like the world is falling on them. And like the Lone did in the story he never gave up and did not to force anyone to accept him. So you can be happy because your happiness is all you  deserve.
-   </p>
-   <br>
-   <p id="font">
-       Also, you may feel left out in the world but know one thing is for sure, that no matter the place or environment you may find yourself, you will definitely lead and that is for sure because GOD HAS WRITTEN IT and so it will remain.
-   </p>
-</div>
-<br>
-<div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background: #0a0c29; height:19000">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-     <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:#d9df25c6;">
-    <h2>
-        ABOUT THE AUTHOR 
-    </h2>
-   </div>
-    <br>
-     <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:#d9df25c6;height:1090px">
-        <img src="me.png"
-         width="256px"   height="300px" style="background-color:#d9df25c6; "alt="the person">
-  <p>
-     <h2>
-         DAVID O.I EMEKA
-     </h2>
-  </p>
-    <P id="font">
-        He is a boy from an average family. With big dreams but had little resources to carry out his projects despite that he never gave he kept strong and continued his journey of life. He passed through his basic education foundational training in DE-PAUL CATHOLIC NURSERY AND PRIMARY SCHOOL, where he did from crèche to primary five. Then pass through a secondary school known as COMMUNITY JUNIOR GRAMMAR SCHOOL for the junior and MILLENNIUM SENIOR SECONDARY SCHOOL for the senior,where he wrote is WEST AFRICA SENIOR SECONDARY CERTIFICATE EXAMINATION (WASSCE).
-    </P>
-        <p id="font"></p>
-        <p id="font">
-            He joined the boys scouts association when he was in JSS3
-        </p>
-    </div>
-    <br>
-    <br>
-    <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background: coral; height:300px">
-         <div id="button4">
-        <i><h2>for more information 
-        <button><a href="https://www.snapchat.com/add/officepin?share_id=bg5m5jgmo3o&locale=en-GB"style="background: silver;">click here</a></button>
-        </div>
-        </h2></i>
-        <h5><em>contact me below</em></h5>
-        <br>
-        <details>
-            <summary>see contact details here</summary>
-            <ul>
-            <p>
-            <a href="https://wa.me/2349133375057? target="_blank">Chat me on WhatsApp</a>
-            </p>
-            <p>
-                <a href="mailto:davidolise286@gmail.com?subject=Help needed">Email me</a>
-            </p>
-            <p>
-                <a href="tel:+2349133375057">call me</a>
-            </p>
-            </ul>
-        </details>
-    </div>
-    </div>
-    </div>
-</body>
-<br>
-<!-- 3. JavaScript program -->
-<script>
-function searchPage() {
-  clearHighlights (); // remove search input first
-  
-  const term = document.getElementById('searchInput').value.trim();
-  if (!term) return;
-  
-  const content = document.getElementById('content');
-  const regex = new RegExp(`(${term})`, 'gi'); // 'g' = all matches, 'i' = case insensitive
-  
-  content.innerHTML = content.innerHTML.replace(regex, '<mark>$1</mark>');
-  
-  // Scroll to all match
-  const allMatch = content.querySelector('mark');
-  if (allMatch) allMatch.scrollIntoView({behavior: 'smooth', block: 'center'});
-}
-
-function clearHighlights () {
-  const content = document.getElementById('content');
-  content.innerHTML = content.innerHTML.replace(/<mark>|<\/mark>/g, '');
-}
-
-// Hit Enter to search
-document.getElementById('searchInput').addEventListener('keyup', e => {
-  if (e.key === 'Enter') searchPage();
-});
-</script>
+<title>Lone Wolf 🐺 — About the Book & Author</title>
 <style>
-.root{
-    --primary:#ff2a15
-}
-body{
-height:10vh;
-overflow:10%;
-background:linear-gradient(
-25deg,
-#d9df25c6 50%,
-#df0900c6 50%);
-transition:0s;
-}
-#button{
-position: absolute;
-left:8%;
-down:95%;
-padding:0px 0px;
-}
-#button2{
-position: absolute;
-right:8%;
-down:95%;
-padding:0px 0px;
-}
-#button3{
-position: absolute;
-left:39%;
-down:10%;
-padding:0px 0px;
-}
-#button4{
-width:min(0%  10px);
-padding:5px 5px;
-font-size:1rem;
-border-radius:4px;
-transition:2s;
-cursor:pointer; 
-}
-#font{
-    font-generic: cursive;
-    font-family: Brush Script MT;
-    word-spacing:5px;
-    color:#2c2e26;
-    font-weight: light;
-    font-size:14px;
-    font-style: oblique;
-}
+  :root{
+    --bg:#0f0d0a;
+    --paper:#fdf6e3;
+    --paper-2:#f7e9c6;
+    --ink:#1a1a1a;
+    --muted:#8a7f6b;
+    --accent:#ff6b35;
+    --accent-2:#d9df25c6;
+    --border:rgba(0,0,0,0.08);
+    --mark:#ffec99;
+    --dark:#0a0c29;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Georgia',serif;
+    background:var(--bg); color:var(--paper); line-height:1.9;
+    background-image:
+      radial-gradient(at 10% 10%, rgba(255,107,53,0.15), transparent 45%),
+      radial-gradient(at 85% 85%, rgba(217,223,37,0.12), transparent 40%);
+    min-height:100vh;
+  }
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    display:flex; gap:12px; align-items:center;
+    padding:14px 6%; background:rgba(15,13,10,0.9);
+    backdrop-filter:blur(20px); border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .brand{font-family:-apple-system,sans-serif; font-weight:800; font-size:1.1rem;}
+  .brand span{color:var(--accent);}
+  .search-wrap{
+    margin-left:auto; display:flex; gap:8px; align-items:center;
+    background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1);
+    border-radius:999px; padding:6px 6px 6px 18px;
+  }
+  .search-wrap input{background:transparent; border:none; outline:none; color:white; width:180px; font-size:0.9rem; font-family:-apple-system,sans-serif;}
+  .search-wrap input::placeholder{color:rgba(255,255,255,0.4);}
+  .icon-btn{width:36px; height:36px; border-radius:50%; border:none; background:var(--accent); color:white; cursor:pointer; display:grid; place-items:center;}
+  .icon-btn.ghost{background:rgba(255,255,255,0.12);}
+
+  .wrap{max-width:900px; margin:0 auto; padding:40px 6% 80px;}
+
+  .chapter{
+    background:var(--paper); color:var(--ink);
+    border-radius:24px; overflow:hidden;
+    box-shadow:0 20px 60px rgba(0,0,0,0.35);
+    margin-top:28px;
+  }
+  .chapter-header{
+    background: linear-gradient(135deg, var(--paper) 0%, var(--paper-2) 100%);
+    padding:26px 32px; border-bottom:1px solid var(--border);
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .chapter-header h2{font-size:1.5rem; letter-spacing:-0.02em;}
+  .chapter-header h5{font-family:-apple-system,sans-serif; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--accent); background:rgba(255,107,53,0.1); padding:6px 12px; border-radius:999px; border:1px solid rgba(255,107,53,0.18);}
+  .chapter-body{padding:28px 32px;}
+  .chapter-body p{font-size:1.13rem; color:#2a2a2a; margin-bottom:18px;}
+  
+  .chapter-img{margin:22px 0; border-radius:16px; overflow:hidden; background:#ece6d3;}
+  .chapter-img img{width:100%; height:360px; object-fit:cover; display:block;}
+  .chapter-img .caption{font-family:-apple-system,sans-serif; font-size:0.8rem; color:var(--muted); padding:10px 14px; background:rgba(0,0,0,0.04);}
+  
+  .dark-section{
+    margin-top:32px; background:var(--dark); border-radius:24px; padding:32px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.4);
+  }
+  .dark-section .inner{
+    background:var(--paper-2); border:2px solid #ccc; border-radius:10px; padding:20px; text-align:center;
+  }
+  .author-card{
+    background:var(--paper-2); border:2px solid #ccc; border-radius:10px; padding:24px;
+    display:grid; grid-template-columns:260px 1fr; gap:24px; color:var(--ink);
+  }
+  .author-card img{width:100%; height:300px; object-fit:cover; border-radius:12px;}
+  .author-card h2{font-size:1.6rem; margin-bottom:10px;}
+  
+  .contact-card{
+    margin-top:24px; background:coral; border:2px solid #ccc; border-radius:10px; padding:24px; color:var(--ink);
+  }
+  .contact-card details{margin-top:16px; background:rgba(255,255,255,0.7); padding:12px 16px; border-radius:8px;}
+  .contact-card summary{cursor:pointer; font-weight:700; font-family:-apple-system,sans-serif;}
+
+  .nav-row{display:flex; justify-content:space-between; gap:12px; margin-top:32px; flex-wrap:wrap;}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:14px 24px; border-radius:999px; text-decoration:none; font-family:-apple-system,sans-serif; font-weight:600; font-size:0.9rem; transition:.2s;}
+  .btn.primary{background:var(--paper); color:var(--ink);}
+  .btn.secondary{background:rgba(255,255,255,0.08); color:var(--paper); border:1px solid rgba(255,255,255,0.12);}
+  .btn:hover{transform:translateY(-2px);}
+  mark{background:var(--mark); padding:0 4px; border-radius:4px;}
+
+  @media(max-width:750px){ .author-card{grid-template-columns:1fr;} .search-wrap input{width:110px;} }
 </style>
-<br>
-<div id="button">
-<button type="Go to next page" style="background:coral">
-       <a href="story4.html">
-           Previous page
-       </a>
-   </button>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">LONE<span> WOLF</span> 🐺</div>
+  <div class="search-wrap">
+    <input type="search" id="searchInput" placeholder="Search...">
+    <button class="icon-btn" onclick="searchPage()">🔍</button>
+    <button class="icon-btn ghost" onclick="clearHighlights()">✕</button>
+  </div>
+</div>
+
+<div class="wrap" id="content">
+
+  <!-- ABOUT THE BOOK - Same style as Chapter 1-4 -->
+  <div class="chapter">
+    <div class="chapter-header">
+      <h2>ABOUT THE BOOK</h2>
+      <h5>Dedication</h5>
     </div>
-    <div id="button2">
-<button type="Go to next page" style="background:coral">
-       <a href="index.html">
-           Go to first page 
-       </a>
-   </button>
-   </div>
-     <div id="button3">
-<button type="Go to next page" style="background:coral">
-       <a href="story5.html">
-           Go to top
-       </a>
-   </button>
+    <div class="chapter-body">
+      <p>
+        This book was written to tell those who feel like the world is falling on them. And like the Lone did in the story he never gave up and did not to force anyone to accept him. So you can be happy because your happiness is all you  deserve.
+      </p>
+      <p>
+        Also, you may feel left out in the world but know one thing is for sure, that no matter the place or environment you may find yourself, you will definitely lead and that is for sure because GOD HAS WRITTEN IT and so it will remain.
+      </p>
     </div>
-   <br>
-   <p>
-       .
-   </p>
+  </div>
+
+  <!-- ABOUT THE AUTHOR - Same style as others -->
+  <div class="dark-section">
+    <div class="inner" style="margin-bottom:20px;">
+      <h2>ABOUT THE AUTHOR</h2>
+    </div>
+
+    <div class="author-card">
+      <img src="Me.png" style="background:#0f0d0a;"alt="David O.I Emeka">
+      <div>
+        <h2>DAVID O.I EMEKA</h2>
+        <p>He is a boy from an average family with big dreams but had little resources to carry out his projects. Despite that he never gave up — he kept strong and continued his journey of life.</p>
+        <p>He passed through DE-PAUL CATHOLIC NURSERY AND PRIMARY SCHOOL (crèche to primary five), then COMMUNITY JUNIOR GRAMMAR SCHOOL for junior and MILLENNIUM SENIOR SECONDARY SCHOOL for senior, where he wrote his WASSCE.</p>
+        <p>He got admission into YABA COLLEGE OF TECHNOLOGY (YABATECH) studying COMPUTER ENGINEERING for OND, then UNIVERSITY OF LAGOS (UNILAG) for BSc, then furthered his education outside the country.</p>
+        <p>He joined the Boys Scouts Association when he was in JSS3.</p>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <h2>For more information <a href="https://www.snapchat.com/add/officepin?share_id=bg5m5jgmo3o&locale=en-GB" style="background:silver; padding:6px 14px; border-radius:999px; text-decoration:none; color:#000;">click here</a></h2>
+      <h5><em>contact me below</em></h5>
+      <details>
+        <summary>see contact details here</summary>
+        <ul style="list-style:none; margin-top:10px; display:grid; gap:10px;">
+          <li>💬 <a href="https://wa.me/2348036935843" target="_blank">Chat me on WhatsApp</a></li>
+          <li>📧 <a href="mailto:davidolise286@gmail.com">Email me</a></li>
+          <li>📞 <a href="tel:+2349133375057">Call me</a></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+
+  <div class="nav-row">
+    <a class="btn secondary" href="story4.html">← Previous page</a>
+    <a class="btn primary" href="story.html">Go to first page ↺</a>
+  </div>
+
+</div>
+
+<script>
+function clearHighlights(){
+  document.querySelectorAll('#content mark').forEach(m=>{
+    const p=m.parentNode; p.replaceChild(document.createTextNode(m.textContent), m); p.normalize();
+  });
+}
+function searchPage(){
+  clearHighlights();
+  const term=document.getElementById('searchInput').value.trim();
+  if(!term) return;
+  const safe=term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  const regex=new RegExp(`(${safe})`,'gi');
+  const walker=document.createTreeWalker(document.getElementById('content'), NodeFilter.SHOW_TEXT);
+  let node; const nodes=[];
+  while(node=walker.nextNode()){
+    if(node.nodeValue.trim() && node.parentElement.tagName!=='MARK' && node.parentElement.tagName!=='SCRIPT'){
+      if(regex.test(node.nodeValue)) nodes.push(node);
+    }
+  }
+  nodes.forEach(t=>{
+    const span=document.createElement('span');
+    span.innerHTML=t.nodeValue.replace(regex,'<mark>$1</mark>');
+    const frag=document.createDocumentFragment();
+    while(span.firstChild) frag.appendChild(span.firstChild);
+    t.parentNode.replaceChild(frag,t);
+  });
+  const first=document.querySelector('#content mark');
+  if(first) first.scrollIntoView({behavior:'smooth', block:'center'});
+}
+document.getElementById('searchInput').addEventListener('keyup', e=>{ if(e.key==='Enter') searchPage(); });
+</script>
+
+</body>
 </html>
