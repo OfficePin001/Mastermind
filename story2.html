@@ -1,130 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LONE WOLF 🐺</title>
-   <!-- 1. Search box -->
-<input type="search" id="searchInput" placeholder="Search here...">
-<button onclick="searchPage()" style ="background:salmon;">🔍</button>
-<button onclick="clearHighlights()" style="background: salmon;">Clear</button>
-    <br>
-    </head>
-    <body>
-        
-        <!-- 2. Your page content -->
-<div id="content">
-<br>
-<div id="section2">
-   <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:coral;">
-       <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:#d9df25c6;">
-       <h2>Chapter one</h2>
-       <h5>Loneliness</h5>
-       </div>
-       <p id="font">
-           In the world 🌎 full of wonderful creatures, from the lion 🦁 to the tiger 🐯 to the elephant 🐘 to the ones which dwells in the ocean 🌊 like the wild shark 🦈,the octopus 🐙 the fishes 🐠🐟 the jellyfish 🪼 and the flying creatures like the eagle 🦅 the raven 🐦‍⬛ and others. This creature has it unique characteristics, they move in pack but one is always left out and that one is the one we call the <em>LONE WOLF</em>. 
-       </p>
-   <img src="LW01.jpg" width="200px     100px"alt="lonewolf">
-</div>
-<br>
-<div id="section 3">
-    <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:coral;">
-        <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:#d9df25c6;">
-        <h2>Chapter two</h2>
-        <h5>what happened</h5>
-        </div>
-        <p id="font">
-             It all started when a wolf has lower ability or is lost but nevertheless is a member of the pack meant to be left out because they are all of the same species and they are like one family so leaving one person behind is like building up a rival between two parties.
-        </p>
-        <p id="font">
-            The wolf left out also known as the <em><span style="color:green">lone wolf</span> </em>might find it difficult to adapt to the new changes in it's environment but if it definitely gets used to the environment it will be more exposed than others in the pack because he will learn different ways of living and he will be able to know how all animals behave and how to relate with them.
-        </p>
-        <img src="LW01a.jpg" width="200px 100px"alt="lonewolf in bush">
-</div>
-</body>
-<header>
-
-<!-- 3. JavaScript program -->
-<script>
-function searchPage() {
-  clearHighlights (); // remove search input first
-  
-  const term = document.getElementById('searchInput').value.trim();
-  if (!term) return;
-  
-  const content = document.getElementById('content');
-  const regex = new RegExp(`(${term})`, 'gi'); // 'g' = all matches, 'i' = case insensitive
-  
-  content.innerHTML = content.innerHTML.replace(regex, '<mark>$1</mark>');
-  
-  // Scroll to all match
-  const allMatch = content.querySelector('mark');
-  if (allMatch) allMatch.scrollIntoView({behavior: 'smooth', block: 'center'});
-}
-
-function clearHighlights () {
-  const content = document.getElementById('content');
-  content.innerHTML = content.innerHTML.replace(/<mark>|<\/mark>/g, '');
-}
-
-// Hit Enter to search
-document.getElementById('searchInput').addEventListener('keyup', e => {
-  if (e.key === 'Enter') searchPage();
-});
-</script>
-</header>
+<title>Lone Wolf 🐺 — Chapter One & Two</title>
 <style>
-.root{
-    --primary:#ff2a15
-}
-body{
-height:10vh;
-overflow:10;
-background:linear-gradient(
-25deg,
-#d9df25c6 50%,
-#df0900c6 50%);
-transition:0s;
-}
-#button{
-position: absolute;
-left:8%;
-down:90%;
-padding:0px 0px;
-}
-#button2{
-position: absolute;
-right:8%;
-down:90%;
-padding:0px 0px;
-}
-#font{
-    font-generic: cursive;
-    font-family: Brush Script MT;
-    word-spacing:5px;
-    color:#2c2e26;
-    font-weight: light;
-    font-size:14px;
-    font-style: oblique;
-}
+  :root{
+    --bg:#0f0d0a;
+    --paper:#fdf6e3;
+    --ink:#1a1a1a;
+    --muted:#8a7f6b;
+    --accent:#ff6b35;
+    --accent-2:#ff8c42;
+    --border:rgba(0,0,0,0.08);
+    --mark:#ffec99;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family: 'Georgia', serif;
+    background: var(--bg); color: var(--paper); line-height:1.8;
+    background-image: 
+      radial-gradient(at 10% 10%, rgba(255,107,53,0.15), transparent 40%),
+      radial-gradient(at 90% 90%, rgba(255,140,66,0.1), transparent 40%);
+    min-height:100vh;
+  }
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    display:flex; gap:12px; align-items:center;
+    padding:14px 6%; background: rgba(15,13,10,0.85);
+    backdrop-filter: blur(20px); border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .brand{font-family: -apple-system, sans-serif; font-weight:800; font-size:1.1rem;}
+  .brand span{color:var(--accent);}
+  .search-wrap{
+    margin-left:auto; display:flex; gap:8px; align-items:center;
+    background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1);
+    border-radius:999px; padding:6px 6px 6px 18px;
+  }
+  .search-wrap input{
+    background:transparent; border:none; outline:none; color:white;
+    width:180px; font-size:0.9rem; font-family: -apple-system, sans-serif;
+  }
+  .search-wrap input::placeholder{color:rgba(255,255,255,0.4);}
+  .icon-btn{
+    width:36px; height:36px; border-radius:50%; border:none;
+    background: var(--accent); color:white; cursor:pointer; display:grid; place-items:center;
+  }
+  .icon-btn.ghost{background:rgba(255,255,255,0.1);}
+  
+  .wrap{max-width:900px; margin:0 auto; padding:40px 6% 80px;}
+  
+  .chapter{
+    margin-top:24px; background:var(--paper); color:var(--ink);
+    border-radius:24px; overflow:hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .chapter-header{
+    background: linear-gradient(135deg, #fdf6e3 0%, #f7e9c6 100%);
+    padding:28px 36px; border-bottom:1px solid var(--border);
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .chapter-header h2{font-size:1.6rem; letter-spacing:-0.02em;}
+  .chapter-header h5{
+    font-family: -apple-system, sans-serif; font-size:0.8rem;
+    text-transform:uppercase; letter-spacing:0.12em; color:var(--accent);
+    background:rgba(255,107,53,0.1); padding:6px 12px; border-radius:999px;
+  }
+  .chapter-body{padding:28px 36px;}
+  .chapter-body p{
+    font-size:1.15rem; color:#2a2a2a; margin-bottom:18px;
+  }
+  .chapter-body p span.highlight{color:var(--accent); font-weight:700;}
+  .chapter-img{
+    margin-top:20px; border-radius:16px; overflow:hidden; background:#eee;
+  }
+  .chapter-img img{width:100%; height:320px; object-fit:cover; display:block;}
+  .chapter-img .caption{
+    font-family: -apple-system, sans-serif; font-size:0.8rem; color:var(--muted);
+    padding:10px 14px; background:rgba(0,0,0,0.04);
+  }
+
+  .nav-row{display:flex; justify-content:space-between; gap:16px; margin-top:28px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:14px 24px;
+    border-radius:999px; text-decoration:none; font-family: -apple-system, sans-serif;
+    font-weight:600; font-size:0.9rem; transition:.2s;
+  }
+  .btn.primary{background:var(--paper); color:var(--ink);}
+  .btn.primary:hover{transform:translateY(-2px);}
+  .btn.secondary{background:rgba(255,255,255,0.08); color:var(--paper); border:1px solid rgba(255,255,255,0.1);}
+
+  mark{background:var(--mark); padding:0 4px; border-radius:4px;}
+
+  @media(max-width:700px){
+    .chapter-header{flex-direction:column; align-items:flex-start; gap:8px;}
+    .search-wrap input{width:110px;}
+  }
 </style>
-<br>
-<div id="button">
-<button type="Go to next page" style="background:coral">
-       <a href="index.html">
-           Previous page
-       </a>
-   </button>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">LONE<span> WOLF</span> 🐺</div>
+  <div class="search-wrap">
+    <input type="search" id="searchInput" placeholder="Search story...">
+    <button class="icon-btn" onclick="searchPage()">🔍</button>
+    <button class="icon-btn ghost" onclick="clearHighlights()">✕</button>
+  </div>
+</div>
+
+<div class="wrap" id="content">
+
+  <!-- Chapter One -->
+  <div class="chapter">
+    <div class="chapter-header">
+      <h2>Chapter One</h2>
+      <h5>Loneliness</h5>
     </div>
-    <div id="button2">
-    <button type="Go to next page" style="background:coral">
-       <a href="story3.html">
-          Next page 
-       </a>
-   </button>
-   </div>
-   <br>
-   <p>
-       .
-   </p>
+    <div class="chapter-body">
+      <p>
+        In the world 🌎 full of wonderful creatures, from the lion 🦁 to the tiger 🐯 to the elephant 🐘 
+        to the ones which dwells in the ocean 🌊 like the wild shark 🦈, the octopus 🐙, the fishes 🐠🐟, 
+        the jellyfish 🪼 and the flying creatures like the eagle 🦅, the raven 🐦‍⬛ and others.
+      </p>
+      <p>
+        These creatures have their unique characteristics, they move in packs but one is always left out 
+        and that one is the one we call the <em><span class="highlight">LONE WOLF</span></em>.
+      </p>
+      <div class="chapter-img">
+        <img src="LW01.jpg" alt="lone wolf">
+        <div class="caption">LW01.jpg — A lone wolf separated from the pack</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter Two -->
+  <div class="chapter">
+    <div class="chapter-header">
+      <h2>Chapter Two</h2>
+      <h5>What Happened</h5>
+    </div>
+    <div class="chapter-body">
+      <p>
+        It all started when a wolf has lower ability or is lost but nevertheless is a member of the pack 
+        meant to be left out because they are all of the same species and they are like one family, so 
+        leaving one person behind is like building up a rival between two parties.
+      </p>
+      <p>
+        The wolf left out also known as the <em><span class="highlight">lone wolf</span></em> might find it 
+        difficult to adapt to the new changes in its environment, but if it definitely gets used to the 
+        environment it will be more exposed than others in the pack because he will learn different ways 
+        of living and he will be able to know how all animals behave and how to relate with them.
+      </p>
+      <div class="chapter-img">
+        <img src="LW01a.jpg" alt="wolf in bush">
+        <div class="caption">LW01a.jpg — Learning to survive alone in the bush</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-row">
+    <a class="btn secondary" href="Wolf story.html">← Previous page</a>
+    <a class="btn primary" href="Wolf story3.html">Next page →</a>
+  </div>
+
+</div>
+
+<script>
+function clearHighlights(){
+  document.querySelectorAll('#content mark').forEach(m=>{
+    const p = m.parentNode;
+    p.replaceChild(document.createTextNode(m.textContent), m);
+    p.normalize();
+  });
+}
+function searchPage(){
+  clearHighlights();
+  const term = document.getElementById('searchInput').value.trim();
+  if(!term) return;
+  const safeTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const regex = new RegExp(`(${safeTerm})`, 'gi');
+  const walker = document.createTreeWalker(document.getElementById('content'), NodeFilter.SHOW_TEXT);
+  let node, firstMark=null;
+  const nodes=[];
+  while(node = walker.nextNode()){
+    if(node.nodeValue.trim() && node.parentElement.tagName !== 'MARK' && node.parentElement.tagName !== 'SCRIPT'){
+      if(regex.test(node.nodeValue)) nodes.push(node);
+    }
+  }
+  nodes.forEach(t=>{
+    const span=document.createElement('span');
+    span.innerHTML=t.nodeValue.replace(regex, '<mark>$1</mark>');
+    const frag=document.createDocumentFragment();
+    while(span.firstChild) frag.appendChild(span.firstChild);
+    t.parentNode.replaceChild(frag, t);
+  });
+  firstMark=document.querySelector('#content mark');
+  if(firstMark) firstMark.scrollIntoView({behavior:'smooth', block:'center'});
+}
+document.getElementById('searchInput').addEventListener('keyup', e=>{ if(e.key==='Enter') searchPage(); });
+</script>
+
+</body>
 </html>
