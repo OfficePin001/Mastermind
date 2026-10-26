@@ -1,148 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lone wolf 🐺</title>
-</head>
- <!-- 1. Search box -->
-<input type="search" id="searchInput" placeholder="Search here...">
-<button onclick="searchPage()" style ="background:salmon;">🔍</button>
-<button onclick="clearHighlights()" style="background: salmon;">Clear</button>
-
-    <br>
-<body>
-    <br>
-    <!-- 2. Your page content -->
-<div id="content">
-    <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:coral;">
-        <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:#d9df25c6;">
-       <h2>Chapter Three</h2>
-       <h5>The pains</h5>
-    </div>
-    <p id="font">
-        Through the burning heat of the sun and the freezing cold of the winter the Lone was still standing strong in other to achieve his goals. When the storm will come in hard this lone never gave up he kept focused on the future that everything will be alright, he has to starve when he found nothing to hunt,he was also chased by other animals that are stronger than him fought with most and ran for his life.
-    </p>
-    <img src="LW01f.jpg" width="300px"alt="lonewolf in bush">
-    <p id="font">
-        He went deep in the wild and discovered a lot that he would not have discovered as member of a pack he has to swim through deadly waters,stump through muddy soil even has to pass through Sharp thorns but nevertheless did he give up. During this process he was actually building himself and his relation with other factors like the animals and plants in the wild,he knows what they would like and what the do not like.
-    </p>
-    <img src="LW01e.jpg" width="300px" height="300px"alt="lonewolf in bush">
-    </div>
-    </body>
-    <br>
-    <body>
-    <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:coral;">
-     <div style="border:2px   solid #ccc; padding:20px; border-radius:10px; background:#d9df25c6;">
-         <h2>Chapter Four</h2>
-         <h5>Don't call it a come back</h5>
-         </div>
-    <p id="font">
-        After going through all those suffering, torment and training he finally achieved his goal he found a space, a very beautiful one where he settled down and called his own land he led all the animals that lived in it and became the head of that land. Ruled there for years and even won battles over his rivals, claim there land and became the head.
-    </p>
-    <img src="LW01g.jpg" width="300px" height="250px"alt="lonewolf in bush">
-    <p id="font">
-        Now, he is to fight with the people in which his real families lived, he had no choice, they dumped him because they found no ability in him. So by the time he got to the land of his family they all thought he has come back to help them cause they were short of soldiers, but they were shocked when they saw the warriors of the people who slayed their soldiers with the Lone and they were frightened and wanted to help him but those were his guards so they reacted towards his family when they drawed closer to him. Then he stood them down and told his family they are my warriors so I will advise you to step down useless he takes them down. And left saying "Don't call this a come back "
-    </p>
-    <img src="LW01h.jpg" width="300px" height="250px"alt="lonewolf in bush">
-    </div>
-    </body>
-    
-    
-<br>
-<!-- 3. JavaScript program -->
-<script>
-function searchPage() {
-  clearHighlights (); // remove search input first
-  
-  const term = document.getElementById('searchInput').value.trim();
-  if (!term) return;
-  
-  const content = document.getElementById('content');
-  const regex = new RegExp(`(${term})`, 'gi'); // 'g' = all matches, 'i' = case insensitive
-  
-  content.innerHTML = content.innerHTML.replace(regex, '<mark>$1</mark>');
-  
-  // Scroll to all match
-  const allMatch = content.querySelector('mark');
-  if (allMatch) allMatch.scrollIntoView({behavior: 'smooth', block: 'center'});
-}
-
-function clearHighlights () {
-  const content = document.getElementById('content');
-  content.innerHTML = content.innerHTML.replace(/<mark>|<\/mark>/g, '');
-}
-
-// Hit Enter to search
-document.getElementById('searchInput').addEventListener('keyup', e => {
-  if (e.key === 'Enter') searchPage();
-});
-</script>
+<title>Lone Wolf 🐺 — The Pains & Comeback</title>
 <style>
-.root{
-    --primary:#ff2a15
-}
-body{
-height:10vh;
-overflow:0;
-background:linear-gradient(
-25deg,
-#d9df25c6 50%,
-#df0900c6 50%);
-transition:0s;
-}
-#button{
-position: absolute;
-left:8%;
-down:90%;
-padding:0px 0px;
-}
-#button2{
-position: absolute;
-right:8%;
-down:90%;
-padding:0px 0px;
-}
-#button3{
-position: absolute;
-right:38%;
-down:10%;
-padding:0px 0px;
-}
-#font{
-    font-generic: cursive;
-    font-family: Brush Script MT;
-    word-spacing:5px;
-    color:#2c2e26;
-    font-weight: light;
-    font-size:14px;
-    font-style: oblique;
-}
+  :root{
+    --bg:#0f0d0a;
+    --paper:#fdf6e3;
+    --ink:#1a1a1a;
+    --muted:#8a7f6b;
+    --accent:#ff6b35;
+    --border:rgba(0,0,0,0.08);
+    --mark:#ffec99;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family: 'Georgia', serif;
+    background: var(--bg); color: var(--paper); line-height:1.9;
+    background-image: 
+      radial-gradient(at 15% 15%, rgba(255,107,53,0.15), transparent 45%),
+      radial-gradient(at 85% 85%, rgba(255,140,66,0.1), transparent 45%);
+    min-height:100vh;
+  }
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    display:flex; gap:12px; align-items:center;
+    padding:14px 6%; background: rgba(15,13,10,0.88);
+    backdrop-filter: blur(20px); border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .brand{font-family: -apple-system, sans-serif; font-weight:800; font-size:1.1rem;}
+  .brand span{color:var(--accent);}
+  .search-wrap{
+    margin-left:auto; display:flex; gap:8px; align-items:center;
+    background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1);
+    border-radius:999px; padding:6px 6px 6px 18px;
+  }
+  .search-wrap input{
+    background:transparent; border:none; outline:none; color:white;
+    width:180px; font-size:0.9rem; font-family: -apple-system, sans-serif;
+  }
+  .search-wrap input::placeholder{color:rgba(255,255,255,0.4);}
+  .icon-btn{width:36px; height:36px; border-radius:50%; border:none; background:var(--accent); color:white; cursor:pointer; display:grid; place-items:center;}
+  .icon-btn.ghost{background:rgba(255,255,255,0.12);}
+
+  .wrap{max-width:900px; margin:0 auto; padding:40px 6% 80px;}
+  
+  .chapter{
+    margin-top:28px; background:var(--paper); color:var(--ink);
+    border-radius:24px; overflow:hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  }
+  .chapter-header{
+    background: linear-gradient(135deg, #fdf6e3 0%, #f7e9c6 100%);
+    padding:26px 32px; border-bottom:1px solid var(--border);
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;
+  }
+  .chapter-header h2{font-size:1.5rem; letter-spacing:-0.02em;}
+  .chapter-header h5{
+    font-family: -apple-system, sans-serif; font-size:0.75rem; text-transform:uppercase; 
+    letter-spacing:0.12em; color:var(--accent);
+    background:rgba(255,107,53,0.1); border:1px solid rgba(255,107,53,0.18);
+    padding:6px 12px; border-radius:999px;
+  }
+  .chapter-body{padding:28px 32px;}
+  .chapter-body p{font-size:1.13rem; color:#2a2a2a; margin-bottom:20px;}
+  .chapter-img{
+    margin:22px 0; border-radius:16px; overflow:hidden; background:#ece6d3;
+  }
+  .chapter-img img{width:100%; height:340px; object-fit:cover; display:block;}
+  .chapter-img .caption{
+    font-family: -apple-system, sans-serif; font-size:0.8rem; color:var(--muted);
+    padding:10px 14px; background:rgba(0,0,0,0.04);
+  }
+  .quote{
+    border-left:3px solid var(--accent); padding:14px 18px; 
+    margin:20px 0; background:rgba(255,107,53,0.06); border-radius:0 12px 12px 0;
+    font-style:italic; font-size:1.15rem; color:#3a3a3a;
+  }
+
+  .nav-row{display:flex; justify-content:space-between; gap:12px; margin-top:32px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:14px 22px;
+    border-radius:999px; text-decoration:none; font-family: -apple-system, sans-serif;
+    font-weight:600; font-size:0.9rem; transition:.2s;
+  }
+  .btn.primary{background:var(--paper); color:var(--ink);}
+  .btn.secondary{background:rgba(255,255,255,0.08); color:var(--paper); border:1px solid rgba(255,255,255,0.12);}
+  .btn:hover{transform:translateY(-2px);}
+  mark{background:var(--mark); padding:0 4px; border-radius:4px;}
+
+  @media(max-width:700px){
+    .chapter-body{padding:22px;}
+    .search-wrap input{width:110px;}
+  }
 </style>
-<br>
-<div id="button">
-<button type="Go to next page" style="background:coral">
-       <a href="story2.html">
-           Previous page
-       </a>
-   </button>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">LONE<span> WOLF</span> 🐺</div>
+  <div class="search-wrap">
+    <input type="search" id="searchInput" placeholder="Search story...">
+    <button class="icon-btn" onclick="searchPage()">🔍</button>
+    <button class="icon-btn ghost" onclick="clearHighlights()">✕</button>
+  </div>
+</div>
+
+<div class="wrap" id="content">
+
+  <!-- Chapter Three -->
+  <div class="chapter">
+    <div class="chapter-header">
+      <h2>Chapter Three</h2>
+      <h5>The Pains</h5>
     </div>
-    <div id="button2">
-    <button type="Go to next page" style="background:coral">
-       <a href="story4.html">
-          Next page 
-       </a>
-   </button>
-   </div>
-   <div id="button3">
-<button type="Go to next page" style="background:coral">
-       <a href="story3.html">
-           Go to top
-       </a>
-   </button>
+    <div class="chapter-body">
+      <p>
+        Through the burning heat of the sun and the freezing cold of the winter, the Lone Wolf was 
+        still standing strong in order to achieve his goals. When the storm came hard, this lone wolf 
+        never gave up — he kept focused on the future that everything will be alright.
+      </p>
+      <p>
+        He had to starve when he found nothing to hunt, he was also chased by other animals that were 
+        stronger than him, fought with most and ran for his life.
+      </p>
+      <div class="chapter-img">
+        <img src="LW01f.jpg" alt="lone wolf in bush">
+        <div class="caption">LW01f.jpg — Enduring the burning sun and freezing winter</div>
+      </div>
+      <p>
+        He went deep in the wild and discovered a lot that he would not have discovered as a member of a pack. 
+        He had to swim through deadly waters, stump through muddy soil, even pass through sharp thorns — 
+        but nevertheless, he did not give up.
+      </p>
+      <p>
+        During this process he was actually building himself and his relationship with other factors like the 
+        animals and plants in the wild. He knows what they would like and what they do not like.
+      </p>
+      <div class="chapter-img">
+        <img src="LW01e.jpg" alt="lone wolf in wild">
+        <div class="caption">LW01e.jpg — Building strength deep in the wild</div>
+      </div>
     </div>
-   <br>
-   <p>
-       .
-   </p>
+  </div>
+
+  <!-- Chapter Four -->
+  <div class="chapter">
+    <div class="chapter-header">
+      <h2>Chapter Four</h2>
+      <h5>Don't Call It A Come Back</h5>
+    </div>
+    <div class="chapter-body">
+      <p>
+        After going through all those suffering, torment and training, he finally achieved his goal. 
+        He found a space, a very beautiful one where he settled down and called his own land. He led all 
+        the animals that lived in it and became the head of that land. Ruled there for years and even won 
+        battles over his rivals, claimed their land and became the head.
+      </p>
+      <div class="chapter-img">
+        <img src="LW01g.jpg" alt="wolf leader">
+        <div class="caption">LW01g.jpg — The new kingdom he built</div>
+      </div>
+      <p>
+        Now, he had to fight with the people in which his real family lived. He had no choice — they dumped 
+        him because they found no ability in him.
+      </p>
+      <p>
+        By the time he got to the land of his family, they all thought he had come back to help them because 
+        they were short of soldiers. But they were shocked when they saw the warriors of the people who slayed 
+        their soldiers with the Lone Wolf — and they were frightened.
+      </p>
+      <p>
+        They wanted to help him, but those were his guards, so they reacted towards his family when they drew 
+        closer to him. Then he stood them down and told his family:
+      </p>
+      <div class="quote">
+        "They are my warriors — so I will advise you to step down, unless he takes them down."<br>
+        And left saying <strong>"Don't call this a come back."</strong>
+      </div>
+      <div class="chapter-img">
+        <img src="LW01h.jpg" alt="wolf army">
+        <div class="caption">LW01h.jpg — Returning not as the weak, but as a king</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-row">
+    <a class="btn secondary" href="story2.html">← Previous</a>
+    <div style="display:flex; gap:10px;">
+      <a class="btn secondary" href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">↑ Top</a>
+      <a class="btn primary" href="story4.html">Next page →</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function clearHighlights(){
+  document.querySelectorAll('#content mark').forEach(m=>{
+    const p=m.parentNode; p.replaceChild(document.createTextNode(m.textContent), m); p.normalize();
+  });
+}
+function searchPage(){
+  clearHighlights();
+  const term=document.getElementById('searchInput').value.trim();
+  if(!term) return;
+  const safe=term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  const regex=new RegExp(`(${safe})`,'gi');
+  const walker=document.createTreeWalker(document.getElementById('content'), NodeFilter.SHOW_TEXT);
+  let node; const nodes=[];
+  while(node=walker.nextNode()){
+    if(node.nodeValue.trim() && node.parentElement.tagName!=='MARK' && node.parentElement.tagName!=='SCRIPT'){
+      if(regex.test(node.nodeValue)) nodes.push(node);
+    }
+  }
+  nodes.forEach(t=>{
+    const span=document.createElement('span');
+    span.innerHTML=t.nodeValue.replace(regex,'<mark>$1</mark>');
+    const frag=document.createDocumentFragment();
+    while(span.firstChild) frag.appendChild(span.firstChild);
+    t.parentNode.replaceChild(frag,t);
+  });
+  const first=document.querySelector('#content mark');
+  if(first) first.scrollIntoView({behavior:'smooth', block:'center'});
+}
+document.getElementById('searchInput').addEventListener('keyup', e=>{ if(e.key==='Enter') searchPage(); });
+</script>
+
+</body>
 </html>
